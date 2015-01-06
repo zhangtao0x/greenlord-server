@@ -1,0 +1,10 @@
+{
+  "name": "greenlord-server",
+  "version": "0.0.1",
+  "private": true,
+  "dependencies": {
+    "mysql":"2.4.3",
+    "async":"0.9.0",
+    "log4js":"0.6.21"
+  }
+}

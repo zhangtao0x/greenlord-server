@@ -1,0 +1,13 @@
+{
+  "appenders": [
+    {
+      "type": "console"
+    },
+    {
+      "type": "dateFile",
+      "filename": "/home/zt/workspace/greenlord-server/log/greenlord-server.log",
+      "pattern": "-yyyy-MM-dd",
+      "alwaysIncludePattern": true
+    }
+  ]
+}
