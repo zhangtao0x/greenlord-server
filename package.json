@@ -1,6 +1,6 @@
 {
   "name": "greenlord-server",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "private": true,
   "dependencies": {
     "mysql":"2.4.3",
