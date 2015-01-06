@@ -35,7 +35,6 @@ SqlHelper.prototype.query=function(sqlText,callBack){
             });
         }
         query();
-        
     });
 }
 
