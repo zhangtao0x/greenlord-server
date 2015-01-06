@@ -4,7 +4,7 @@ var SqlHelper=require('../../db/sqlHelper');
 var async = require('async');
 var fs = require('fs');
 
-var sqlHelper=new SqlHelper(dbConfig.test);
+var sqlHelper=new SqlHelper(dbConfig.local);
 
 var backupManager = new BackupManager(sqlHelper);
 

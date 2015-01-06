@@ -10,7 +10,7 @@ var queryData = queryString.stringify({
 });
 
 var  options = { 
-    hostname:  '172.29.10.108' , 
+    hostname:  '192.168.66.136' , 
     port: 8000, 
     path:  '/' , 
     method:  'GET' , 

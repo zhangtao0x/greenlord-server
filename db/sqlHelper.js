@@ -33,9 +33,8 @@ SqlHelper.prototype.query=function(sqlText,callBack){
                 callBack(data);
                 connection.release();
             });
-        },
+        }
         query();
-        setInterval(query, 5000);
         
     });
 }
