@@ -50,7 +50,7 @@ BackupManager.prototype.exists=function(ostype,filename,callback){
 
 BackupManager.prototype.upload=function(data,callback){
     var sqlText="insert into greenlord_repair.@ostype values(\"\",\""+ data.filename+"\",\""+data.filepath+"\",\""+data.filesize+"\",\""+data.filetext+"\",\""+data.filemd5+"\",\""+data.ostype+"\",now())";
-    console.log(sqlText);
+   // console.log(sqlText);
     sqlText = sqlText.replace('@ostype',data.ostype.toLowerCase());
     this.sqlHelper.query(sqlText,callback);
 }

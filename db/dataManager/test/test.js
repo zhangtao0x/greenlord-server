@@ -4,8 +4,8 @@ var zlib = require('zlib');
 
 var datamanager = new DataManager();
 var data = {
-	filename:"issue",
-	filepath:"/etc/issue",
+	filename:"inetd.conf",
+	filepath:"/etc/inetd.conf",
 	filesize:0,
 	filetext:"",
 	filemd5:"",
