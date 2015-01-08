@@ -3,55 +3,55 @@ var fs = require('fs');
 var zlib = require('zlib');
 
 var datamanager = new DataManager();
-// var data = {
-// 	filename:"sources.list",
-// 	filepath:"/etc/apt/sources.list",
-// 	filesize:0,
-// 	filetext:"",
-// 	filemd5:"",
-// 	ostype:"cos"
-// }
+ var data = {
+ 	filename:"syslog-ng.conf",
+ 	filepath:"/etc/syslog-ng/syslog-ng.conf",
+ 	filesize:0,
+ 	filetext:"",
+ 	filemd5:"",
+ 	ostype:"cos"
+ }
 
-// datamanager.Upload(data,function(result){
-// 	console.log(result);
-// })
+ datamanager.Upload(data,function(result){
+ 	console.log(result);
+ })
 // datamanager.Exists("cdos","aaa",function(result){
 // 	//console.log(result);
 // })
 // console.log(data.filetext);
 // datamanager.Upload(data,function(result){
 // 	console.log(result);
-// })
-var datalist = [
-	{
-		filename:"issue",
-		filepath:"/etc/issue",
-		filesize:0,
-		filetext:"",
-		filemd5:"",
-		ostype:"cos"
-	},
-	{
-		filename:"motd",
-		filepath:"/etc/motd",
-		filesize:0,
-		filetext:"",
-		filemd5:"",
-		ostype:"cos"
-	},
-	{
-		filename:"issue.net",
-		filepath:"/etc/issue.net",
-		filesize:0,
-		filetext:"",
-		filemd5:"",
-		ostype:"cos"
-	}
-]
+// // })
+// var datalist = [
+// 	{
+// 		filename:"issue",
+// 		filepath:"/etc/issue",
+// 		filesize:0,
+// 		filetext:"",
+// 		filemd5:"",
+// 		ostype:"cos"
+// 	},
+// 	{
+// 		filename:"motd",
+// 		filepath:"/etc/motd",
+// 		filesize:0,
+// 		filetext:"",
+// 		filemd5:"",
+// 		ostype:"cos"
+// 	},
+// 	{
+// 		filename:"issue.net",
+// 		filepath:"/etc/issue.net",
+// 		filesize:0,
+// 		filetext:"",
+// 		filemd5:"",
+// 		ostype:"cos"
+// 	}
+// ]
 
-datamanager.UploadMultiple(datalist,function(result){
-	console.log(result);
-})
+// datamanager.UploadMultiple(datalist,function(result){
+// 	console.log(result);
+// })
 // datamanager.GetAllData("cdos",function(data){
 // 	console.log(data);
 // })

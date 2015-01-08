@@ -159,11 +159,11 @@ DataManager.prototype.GetFileSize = function(ostype,filename,callback){
 DataManager.prototype.GetFileText = function(ostype,filename,callback){
 	backupManager.getFiletext(ostype,filename,function(data){
 		console.log(data);
-		// var filetext = data.result[0].File.toString();
-		// filetext = filetext.replace(/@0@/g,"\"");
-		// filetext = filetext.toString().replace(/@1@/g,"'");
-		// filetext = filetext.toString().replace(/@2@/g,"`");
-		// data.result[0].File = filetext;
+		var filetext = data.result[0].File.toString();
+		filetext = filetext.replace(/@0@/g,"\"");
+		filetext = filetext.toString().replace(/@1@/g,"'");
+		filetext = filetext.toString().replace(/@2@/g,"`");
+		data.result[0].File = filetext;
 		callback(data);
 	});
 }
