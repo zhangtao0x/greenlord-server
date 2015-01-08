@@ -3,18 +3,18 @@ var fs = require('fs');
 var zlib = require('zlib');
 
 var datamanager = new DataManager();
-var data = {
-	filename:"inetd.conf",
-	filepath:"/etc/inetd.conf",
-	filesize:0,
-	filetext:"",
-	filemd5:"",
-	ostype:"cdos"
-}
+// var data = {
+// 	filename:"sources.list",
+// 	filepath:"/etc/apt/sources.list",
+// 	filesize:0,
+// 	filetext:"",
+// 	filemd5:"",
+// 	ostype:"cos"
+// }
 
-datamanager.Upload(data,function(result){
-	console.log(result);
-})
+// datamanager.Upload(data,function(result){
+// 	console.log(result);
+// })
 // datamanager.Exists("cdos","aaa",function(result){
 // 	//console.log(result);
 // })
@@ -29,7 +29,7 @@ var datalist = [
 		filesize:0,
 		filetext:"",
 		filemd5:"",
-		ostype:"cdos"
+		ostype:"cos"
 	},
 	{
 		filename:"motd",
@@ -37,7 +37,7 @@ var datalist = [
 		filesize:0,
 		filetext:"",
 		filemd5:"",
-		ostype:"cdos"
+		ostype:"cos"
 	},
 	{
 		filename:"issue.net",
@@ -45,7 +45,7 @@ var datalist = [
 		filesize:0,
 		filetext:"",
 		filemd5:"",
-		ostype:"cdos"
+		ostype:"cos"
 	}
 ]
 

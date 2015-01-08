@@ -6,6 +6,7 @@ var zlib = require('zlib');
 var queryString = require('querystring');
 var url = require("url");
 var async = require('async');
+var path = require('path');
 var Logger = require('./log/logger');
 
 var logger = new Logger();
@@ -25,12 +26,16 @@ https.createServer(options,function(req,res){
 	//console.log(headers['query-data']);
 	var finalData = queryString.parse(queryData);
 
-	var os = finalData.os;
+	var os = finalData.os.toLowerCase();
 	var filename = finalData.filename;
+	filename = path.basename("/etc/issue");
+	//console.log(filename);
 	// console.log(queryString.parse(queryData)['md5']);
 	datamanager.Exists(os,filename,function(data){
 		console.log("Index:");
 		console.log(data);
+		// status 404 file not found
+		// status 200 file found
 		if(data === 1){
 			async.parallel([
 				//
@@ -67,10 +72,10 @@ https.createServer(options,function(req,res){
 							zlib.gzip(results[0],function(err,zipdata){
 								res.writeHead(200,{"Content-Type":"text/data",
 													"Content-path": results[1],
-													"Content-Code":data,
+													"Content-Status":200,
 													"content-encoding":"gzip"});
 								res.write(zipdata);
-								logger.info(clientIp+"请求网络");
+								logger.info(clientIp+":请求网络");
 								res.end();
 							})
 						}
@@ -83,18 +88,18 @@ https.createServer(options,function(req,res){
 			// })
 		}else if(data == -1){
 			console.log("服务器中没有相应操作系统的数据");
-			logger.error(clientIp+"请求网络,服务器中没有相应操作系统的数据");
-			res.writeHead(200,{"Content-Type":"text/data","Content-Code":data});
+			logger.error(clientIp+":请求网络,服务器中没有相应操作系统的数据");
+			res.writeHead(200,{"Content-Type":"text/data","Content-Status":404});
 			res.end();
 		}else if(data == 0){
 			console.log("没有找到匹配的文件");
-			logger.error(clientIp+"请求网络,服务器中没有找到匹配的文件");
-			res.writeHead(200,{"Content-Type":"text/data","Content-Code":data});
+			logger.error(clientIp+":请求网络,服务器中没有找到匹配的文件");
+			res.writeHead(200,{"Content-Type":"text/data","Content-Status":404});
 			res.end();
 		}else{
 			console.log("未知错误");
-			logger.error(clientIp+"请求网络,服务器中没有找到匹配的文件");
-			res.writeHead(200,{"Content-Type":"text/data","Content-Code":data});
+			logger.error(clientIp+":未知错误");
+			res.writeHead(200,{"Content-Type":"text/data","Content-Status":data});
 			res.end();
 		}
 	})
